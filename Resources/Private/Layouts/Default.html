@@ -40,10 +40,10 @@
                             <ul class="menu vertical">
                                 <f:security.ifHasRole role="Editor">
                                     <li>
-                                        <f:link.action action="new" controller="BlogEntry">Create new post</f:link.action>
+                                        <f:link.action action="new" controller="BlogEntry">Create new Post</f:link.action>
                                     </li>
                                     <li>
-                                        <f:link.action action="new" controller="BlogEntry">Create User</f:link.action>
+                                        <f:link.action action="register" controller="Login">Create User</f:link.action>
                                     </li>
                                 </f:security.ifHasRole>
                                 <li>

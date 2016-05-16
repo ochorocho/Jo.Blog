@@ -4,19 +4,29 @@
 <f:section name="uniqueId">loginRegister</f:section>
 
 <f:section name="Content">
-    <div class="space-32"> </div>
     <div class="row">
         <div class="medium-12 columns">
 
             <f:flashMessages />
 
+            <h4>Add a new User</h4>
             <f:security.ifHasRole role="Editor">
                 <f:then>
                     <f:form action="create" controller="Login" method="post" name="loginform">
-                        <label>User:</label><f:form.textfield name="name" /><br />
-                        <label>Pass:</label><f:form.password name="pass" /><br />
-                        <label>Pass repeat:</label><f:form.password name="pass2" /><br />
-                        <f:form.submit value="Login" />
+                        <label>User:</label><f:form.textfield name="name" />
+                        <label>Pass:</label><f:form.password name="pass" />
+                        <label>Pass repeat:</label><f:form.password name="pass2" />
+
+                        <div class="space-32"></div>
+                        <div class="row">
+                            <div class="medium-6 columns">
+                                <f:link.action action="index" controller="BlogEntry" class="button warning expanded">Cancel</f:link.action>
+                            </div>
+                            <div class="medium-6 columns">
+                                <f:form.submit value="Create User" class="button success expanded" />
+                            </div>
+                        </div>
+
                     </f:form>
                 </f:then>
                 <f:else>

@@ -4,12 +4,12 @@
 <f:section name="uniqueId">loginForm</f:section>
 
 <f:section name="Content">
-    <div class="space-32"> </div>
     <div class="row">
         <div class="medium-12 columns">
 
             <f:render partial="FlashMessages"/>
 
+            <h4>Login to your Blog</h4>
             <f:security.ifHasRole role="Editor">
                 <f:then>
                     <f:link.action action="logout" controller="Login">Logout</f:link.action>
