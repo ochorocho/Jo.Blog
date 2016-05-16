@@ -20,10 +20,7 @@
         <link rel="apple-touch-icon" sizes="144x144" href="{f:uri.resource(path: 'Images/logo-144.png', package: 'Jo.Blog')}">
 
     </head>
-    <body>
-
-
-
+    <body class="<f:render section="uniqueId" />">
 
         <div class="top-bar">
             <nav class="column row">
@@ -63,33 +60,9 @@
             </nav>
         </div>
         <div id="content">
-            <f:flashMessages as="flashMessages">
-                <div id="flashMsg" class="column row">
-                    <f:for each="{flashMessages}" as="flashMessage">
-                        <f:if condition="{0: flashMessage.severity} == {0: 'OK'}">
-                            <f:then>
-                                <div class="callout success">
-                                    <p>{flashMessage}</p>
-                                </div>
-                            </f:then>
-                            <f:else>
-                                <div class="callout alert">
-                                    <p>{flashMessage}</p>
-                                </div>
-                            </f:else>
-                        </f:if>
-                    </f:for>
-                </div>
-            </f:flashMessages>
 
             <f:render section="Content" />
-
-            <div class="text-center full reveal" id="lightboxImage" data-reveal>
-                <img src="" alt="Intropsective Cage">
-                <button class="close-button" data-close aria-label="Close reveal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+            <f:render partial="LightboxImage"/>
         </div>
         <script type="text/javascript" src="../../../Public/Libraries/foundation-custom/js/vendor/jquery.js"></script>
         <script type="text/javascript" src="../../../Public/Libraries/foundation-custom/js/vendor/what-input.js"></script>

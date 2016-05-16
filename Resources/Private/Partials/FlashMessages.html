@@ -1,0 +1,18 @@
+<f:flashMessages as="flashMessages">
+    <div id="flashMsg" class="column row">
+        <f:for each="{flashMessages}" as="flashMessage">
+            <f:if condition="{0: flashMessage.severity} == {0: 'OK'}">
+                <f:then>
+                    <div class="callout success">
+                        <p>{flashMessage}</p>
+                    </div>
+                </f:then>
+                <f:else>
+                    <div class="callout alert">
+                        <p>{flashMessage}</p>
+                    </div>
+                </f:else>
+            </f:if>
+        </f:for>
+    </div>
+</f:flashMessages>

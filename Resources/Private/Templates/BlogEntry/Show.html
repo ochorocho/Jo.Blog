@@ -1,16 +1,19 @@
 {namespace m=TYPO3\Media\ViewHelpers}
 <f:layout name="Default" />
 
-<f:section name="Title">Show {blogEntry.name}</f:section>
+<f:section name="Title">{blogEntry.name} - Black Sea Roundabout</f:section>
+<f:section name="uniqueId">blogDetail</f:section>
 
 <f:section name="Content">
 
-
     <div id="imageCover"  style="background-image: url(http://blog.knallimall.org/_Resources/Persistent/d99f2607751089944095f754bb40b6a9402b9e09/P8250225-1707x1280.jpg)">
+
+        <span>
+            <f:render partial="FlashMessages"/>
+        </span>
 
         <div class="row">
             <div class="small-12 large-12 columns">
-
                 <div class="row">
                     <div class="small-12 medium-2 large-3 columns">&nbsp;</div>
 

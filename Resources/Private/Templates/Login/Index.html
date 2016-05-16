@@ -1,14 +1,14 @@
 <f:layout name="Default.html" />
 
-<f:section name="Title">Flow - Login</f:section>
-
+<f:section name="Title">Black Sea Roundabout - Login</f:section>
+<f:section name="uniqueId">loginForm</f:section>
 
 <f:section name="Content">
     <div class="space-32"> </div>
     <div class="row">
         <div class="medium-12 columns">
 
-            <f:flashMessages />
+            <f:render partial="FlashMessages"/>
 
             <f:security.ifHasRole role="Editor">
                 <f:then>

@@ -3,10 +3,9 @@
 <f:layout name="Default" />
 
 <f:section name="Title">Edit blog entry "{blogEntry.name}"</f:section>
+<f:section name="uniqueId">blogUpdate</f:section>
 
 <f:section name="Content">
-
-    <f:debug>{blogEntry}</f:debug>
 
     <f:form action="update" object="{blogEntry}" objectName="blogEntry" enctype="multipart/form-data" additionalAttributes="{data-abide: '',novalidate: ''}">
         <div class="row">
