@@ -14,17 +14,5 @@ use TYPO3\Flow\Persistence\Repository;
  */
 class BlogEntryRepository extends Repository
 {
-        /**
-         * Finds the active blog.
-         *
-         * For now, only one Blog is supported anyway so we just assume that only one
-         * Blog object resides in the Blog Repository.
-         *
-         * @return BlogEntry The active blog or FALSE if none exists
-         */
-        public function findActive() {
-                $query = $this->createQuery();
-                return $query->execute()->getFirst();
-        }
 
 }

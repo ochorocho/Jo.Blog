@@ -61,7 +61,7 @@ class BlogEntry
     /**
      * The comments contained in this blogEntry
      *
-     * @ORM\OneToMany(mappedBy="blogEntry")
+     * @ORM\OneToMany(mappedBy="blogEntry", orphanRemoval=true)
      * @ORM\OrderBy({"date" = "DESC"})
      * @var Collection<Comment>
      */

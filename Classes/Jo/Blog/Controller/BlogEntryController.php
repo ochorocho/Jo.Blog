@@ -115,15 +115,6 @@ class BlogEntryController extends ActionController
     {
         $this->blogEntryRepository->update($blogEntry);
 
-//        $post = new Comment();
-//        $post->setBlog($blogEntry);
-//        $post->setTitle('John Doe');
-//        $post->setAuthor('John Doe');
-//        $post->setSubject('Example Post');
-//        $post->setContent('NUI! dolor sit amet, consectetur adipisicing elit.' . chr(10) . 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
-//        $this->commentRepository->add($post);
-
-
         $this->addFlashMessage('Updated the blog entry.');
         $this->redirect('index');
     }
@@ -138,6 +129,7 @@ class BlogEntryController extends ActionController
     public function deleteAction(BlogEntry $blogEntry)
     {
         $this->blogEntryRepository->remove($blogEntry);
+
         $this->addFlashMessage('Deleted a blog entry.');
         $this->redirect('index');
     }
