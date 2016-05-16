@@ -16,7 +16,12 @@
                         <div class="row">
                             <div class="medium-4 columns">
                                 <f:if condition="{blogEntry.imagecover}">
-                                    <m:image image="{blogEntry.imagecover}" maximumWidth="300" maximumHeight="200" alt="Profilbild"/>
+                                    <f:link.action action="show" arguments="{blogEntry: blogEntry}">
+                                        <img class="fullImage" data-interchange="
+                                            [{m:uri.image(image:"{blogEntry.imagecover}", maximumWidth: 400, maximumHeight: 200, allowCropping: true)}, small],
+                                            [{m:uri.image(image:"{blogEntry.imagecover}", maximumWidth: 200, maximumHeight: 200)}, medium],
+                                            [{m:uri.image(image:"{blogEntry.imagecover}", maximumWidth: 300, maximumHeight: 300)}, large]" />
+                                    </f:link.action>
                                 </f:if>
                             </div>
                             <div class="medium-8 columns">

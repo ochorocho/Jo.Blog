@@ -129,6 +129,10 @@
     margin: 10px;
 }
 
+.fullImage {
+    width: 100%;
+}
+
 #lightboxImage {
     z-index: 100;
 }
@@ -187,10 +191,16 @@
     margin: .75rem auto
 }
 
-
 #blogList .columns:nth-child(1), #blogList .columns:nth-child(2) {
     padding-bottom: 1rem;
 }
+
+/* PAGES */
+.blogDetail #flashMsg {
+   margin-top: 80px;
+}
+
+
 
 // Small screens
 @media only screen {

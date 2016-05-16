@@ -16,8 +16,6 @@ use Doctrine\ORM\Mapping as ORM;
 
 use TYPO3\Flow\Error\Debugger;
 use TYPO3\Flow\Mvc\Controller\ActionController;
-use TYPO3\Flow\Property\PropertyMappingConfiguration;
-use TYPO3\Flow\Property\TypeConverter\PersistentObjectConverter;
 use TYPO3\Media\TypeConverter\AssetInterfaceConverter;
 
 use Jo\Blog\Domain\Model\BlogEntry;
@@ -45,15 +43,9 @@ class CommentController extends ActionController
      * @return void
      */
     public function createAction(Comment $newComment) {
-            $this->commentRepository->add($newComment);
-            $this->addFlashMessage('Created a new comment.');
-
-            // $blogEntry = $this->request->getArgument('blogEntry');
-
-            \TYPO3\Flow\var_dump($newComment->getBlogEntry());
-
-            $this->redirect('show','BlogEntry',NULL,array('blogEntry' => $newComment->getBlogEntry()));
-            // $this->redirect('index','BlogEntry');
+        $this->commentRepository->add($newComment);
+        $this->addFlashMessage('Created a new comment.');
+        $this->redirect('show','BlogEntry',NULL,array('blogEntry' => $newComment->getBlogEntry()));
     }
 
 }
