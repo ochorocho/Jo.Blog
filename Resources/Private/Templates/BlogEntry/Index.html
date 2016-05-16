@@ -1,0 +1,55 @@
+{namespace m=TYPO3\Media\ViewHelpers}
+<f:layout name="Default"/>
+
+<f:section name="Title">A list of blog entries</f:section>
+
+<f:section name="Content">
+    <div id="blogList">
+    <f:if condition="{blogEntries}">
+        <f:then>
+            <f:widget.paginate objects="{blogEntries}" as="paginatedObjects" configuration="{itemsPerPage: 10, addQueryStringMethod: 'POST,GET'}">
+                    <f:for each="{paginatedObjects}" as="blogEntry">
+                        <div class="row">
+                            <div class="medium-4 columns">
+                                <f:if condition="{blogEntry.imagecover}">
+                                    <m:image image="{blogEntry.imagecover}" maximumWidth="300" maximumHeight="200" alt="Profilbild"/>
+                                </f:if>
+                            </div>
+                            <div class="medium-8 columns">
+                                <h5>
+                                    <f:link.action action="show" arguments="{blogEntry: blogEntry}">{blogEntry.name}</f:link.action>
+                                    <span class="grey label float-right"><f:format.date date="{blogEntry.datecreated}" format="d.m.y"/></span>
+                                </h5>
+                                <f:format.crop maxCharacters="200">
+                                    <f:format.stripTags>
+                                        <f:format.htmlentitiesDecode>{blogEntry.text}</f:format.htmlentitiesDecode>
+                                    </f:format.stripTags>
+                                </f:format.crop>
+                            </div>
+                            <f:security.ifHasRole role="Editor">
+                                <div class="medium-12 columns editBlogPost medium-only-text-center">
+                                    <f:link.action action="edit" arguments="{blogEntry: blogEntry}" class="button">Edit
+                                    </f:link.action>
+                                    <f:form action="delete" arguments="{blogEntry: blogEntry}">
+                                        <f:form.submit value="Delete" class="button alert"/>
+                                    </f:form>
+                                </div>
+                            </f:security.ifHasRole>
+
+                        </div>
+                        <div class="column row">
+                            <hr>
+                        </div>
+                    </f:for>
+            </f:widget.paginate>
+        </f:then>
+        <f:else>
+            <div class="row">
+                <div class="medium-12 columns">
+                    <p class="text-center">No blog entries created yet.</p>
+                    </div>
+                </div>
+        </f:else>
+    </f:if>
+    </div>
+</f:section>

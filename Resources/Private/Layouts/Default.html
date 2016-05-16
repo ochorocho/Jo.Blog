@@ -1,0 +1,99 @@
+{namespace m=TYPO3\Media\ViewHelpers}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title><f:render section="Title" /></title>
+        <f:base />
+        <link rel="stylesheet" type="text/css" href="../../../Public/Libraries/foundation-custom/css/foundation.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../../Public/Styles/app.css" />
+        <script src='../../../Public/Libraries/tinymce/js/tinymce/tinymce.min.js'></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-title" content="Blog KnallImAll">
+        <link rel="shortcut icon" href="{f:uri.resource(path: 'Images/logo.png', package: 'Jo.Blog')}">
+        <link rel="apple-touch-icon" href="{f:uri.resource(path: 'Images/logo-60.png', package: 'Jo.Blog')}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{f:uri.resource(path: 'Images/logo-60.png', package: 'Jo.Blog')}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{f:uri.resource(path: 'Images/logo-114.png', package: 'Jo.Blog')}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{f:uri.resource(path: 'Images/logo-144.png', package: 'Jo.Blog')}">
+
+    </head>
+    <body>
+
+
+
+
+        <div class="top-bar">
+            <nav class="column row">
+                <div class="top-bar-left">
+                    <ul class="dropdown menu" data-dropdown-menu>
+                        <li class="menu-text">
+                            <a href="/">
+                                <img src="../../../Public/Images/logo.png" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="top-bar-right">
+                    <ul class="dropdown menu" data-dropdown-menu>
+                        <li>
+                            <a class="iconWidget" href="#"><img src="../../../Public/Images/fi-widget.svg" style="width: 40px; height: 40px;"></a>
+                            <ul class="menu vertical">
+                                <f:security.ifHasRole role="Editor">
+                                    <li>
+                                        <f:link.action action="new" controller="BlogEntry">Create new post</f:link.action>
+                                    </li>
+                                </f:security.ifHasRole>
+                                <li>
+                                    <f:security.ifHasRole role="Editor">
+                                        <f:then>
+                                            <f:link.action action="logout" controller="Login">Logout</f:link.action>
+                                        </f:then>
+                                        <f:else>
+                                            <f:link.action action="index" controller="Login">Login</f:link.action>
+                                        </f:else>
+                                    </f:security.ifHasRole>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div id="content">
+            <f:flashMessages as="flashMessages">
+                <div id="flashMsg" class="column row">
+                    <f:for each="{flashMessages}" as="flashMessage">
+                        <f:if condition="{0: flashMessage.severity} == {0: 'OK'}">
+                            <f:then>
+                                <div class="callout success">
+                                    <p>{flashMessage}</p>
+                                </div>
+                            </f:then>
+                            <f:else>
+                                <div class="callout alert">
+                                    <p>{flashMessage}</p>
+                                </div>
+                            </f:else>
+                        </f:if>
+                    </f:for>
+                </div>
+            </f:flashMessages>
+
+            <f:render section="Content" />
+
+            <div class="text-center full reveal" id="lightboxImage" data-reveal>
+                <img src="" alt="Intropsective Cage">
+                <button class="close-button" data-close aria-label="Close reveal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        <script type="text/javascript" src="../../../Public/Libraries/foundation-custom/js/vendor/jquery.js"></script>
+        <script type="text/javascript" src="../../../Public/Libraries/foundation-custom/js/vendor/what-input.js"></script>
+        <script type="text/javascript" src="../../../Public/Libraries/foundation-custom/js/vendor/foundation.min.js"></script>
+        <script type="text/javascript" src="../../../Public/JavaScripts/app.js"></script>
+    </body>
+</html>

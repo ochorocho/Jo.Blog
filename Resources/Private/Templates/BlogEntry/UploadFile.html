@@ -1,0 +1,38 @@
+<f:layout name="Default"/>
+
+<f:section name="Title">A list of blog entries</f:section>
+
+
+
+
+
+<f:section name="Content">
+    <f:if condition="{blogEntries}">
+        <f:then>
+            <ul>
+                <f:for each="{blogEntries}" as="blogEntry">
+                    <li>
+
+                        <a src="{f:uri.resource(resource: MyResource.resource)}">Download</a>
+
+                        <f:link.action action="show" arguments="{blogEntry: blogEntry}">{blogEntry.name}</f:link.action>
+                        <f:format.crop maxCharacters="200">
+                            <f:format.stripTags>{blogEntry.text}</f:format.stripTags>
+                        </f:format.crop>
+
+                        <f:link.action action="edit" arguments="{blogEntry: blogEntry}" class="button">Edit</f:link.action>
+                        <f:form action="delete" arguments="{blogEntry: blogEntry}">
+                            <f:form.submit value="Delete" class="button alert"/>
+                        </f:form>
+                    </li>
+                </f:for>
+            </ul>
+        </f:then>
+        <f:else>
+            <p>No blog entries created yet.</p>
+        </f:else>
+    </f:if>
+    <p>
+        <f:link.action action="new" class="button">Create a new blog entry</f:link.action>
+    </p>
+</f:section>

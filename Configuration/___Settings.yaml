@@ -1,0 +1,8 @@
+TYPO3:
+  FLOW3:
+    security:
+      authentication:
+        authenticationStrategy: oneToken
+        providers:
+          DefaultProvider:
+            providerClass: PersistedUsernamePasswordProvider

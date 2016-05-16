@@ -1,0 +1,50 @@
+<div id="comments" class="row">
+    <div class="medium-12 columns">
+        <img style="width: 50px;" src="../../../Public/Images/fi-comment.svg"/> Comments
+        <hr>
+        <f:if condition="{blogEntry.comments}">
+            <f:then>
+                <f:for each="{blogEntry.comments}" as="comment">
+                    <div class="row">
+                        <div class="small-4 medium-3 large-4 columns">
+                            <h5 class="author">
+                                {comment.author}
+                            </h5>
+                            <div>
+                                <sup>
+                                    <f:format.date format="d.m.Y H:i">{comment.date}</f:format.date>
+                                </sup>
+                            </div>
+                        </div>
+                        <div class="small-8 medium-9 large-8 columns">
+                            <f:format.raw>{comment.content}</f:format.raw>
+                        </div>
+                    </div>
+
+
+                    <hr>
+                </f:for>
+            </f:then>
+            <f:else>
+                <p>Write a comment ... </p>
+            </f:else>
+        </f:if>
+
+
+        <div class="space-24">&nbsp;</div>
+        <h4>Create new Comment</h4>
+        <f:form action="create" controller="Comment" objectName="newComment">
+            <f:form.hidden property="blogEntry" value="{blogEntry}" />
+
+            <label for="comment-author">Author</label>
+            <f:form.textfield property="author" id="comment-author" />
+
+            <label for="comment-content">Content</label>
+            <f:form.textarea property="content" id="comment-content" />
+
+            <div class="space-24">&nbsp;</div>
+            <f:form.submit class="button" name="submit" value="Publish Comment" />
+        </f:form>
+    </div>
+    <div class="space-32">&nbsp;</div>
+</div>

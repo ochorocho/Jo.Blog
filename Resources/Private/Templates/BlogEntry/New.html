@@ -1,0 +1,58 @@
+<f:layout name="Default" />
+
+<f:section name="Title">New blog entry</f:section>
+
+<f:section name="Content">
+    <div class="space-32"> </div>
+    <f:form action="create" objectName="newBlogEntry" enctype="multipart/form-data" additionalAttributes="{data-abide: '',novalidate: ''}">
+
+        <div class="row">
+            <div class="medium-12 columns">
+                <label for="name">Blog Post Title
+                    <f:form.textfield property="name" id="name" required="1"/>
+                    <span class="form-error">
+                          Yo, you had better fill this out, it's required.
+                    </span>
+                </label>
+            </div>
+            <div class="medium-12 columns">
+                <label for="text">Text</label>
+                <f:form.textarea property="text" id="text" />
+            </div>
+        </div>
+        <div class="space-32"></div>
+        <div class="row">
+            <div class="small-6 medium-3 columns">
+                <label class="button expanded" for="imageCover">Cover image
+                    <f:form.upload id="imageCover" class="hide" property="imageCover.resource" />
+                </label>
+            </div>
+            <div class="small-6 medium-3 columns">
+                <label class="button expanded" for="image1">Image 1
+                    <f:form.upload id="image1" class="hide" property="image1.resource" />
+                </label>
+            </div>
+            <div class="small-6 medium-3 columns">
+                <label class="button expanded" for="image2">Image 2
+                    <f:form.upload id="image2" class="hide" property="image2.resource" />
+                </label>
+            </div>
+            <div class="small-6 medium-3 columns">
+                <label class="button expanded" for="image3">Image 3
+                    <f:form.upload id="image3" class="hide" property="image3.resource" />
+                </label>
+            </div>
+        </div>
+        <div class="space-32"></div>
+        <div class="row">
+            <div class="medium-6 columns">
+                <f:link.action action="index" controller="BlogEntry" class="button warning expanded">Cancel</f:link.action>
+            </div>
+            <div class="medium-6 columns">
+                <f:form.submit value="Create" class="button success expanded" />
+            </div>
+        </div>
+
+    </f:form>
+
+</f:section>

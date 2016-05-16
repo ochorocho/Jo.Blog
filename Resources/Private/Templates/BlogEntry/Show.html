@@ -1,0 +1,58 @@
+{namespace m=TYPO3\Media\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="Title">Show {blogEntry.name}</f:section>
+
+<f:section name="Content">
+
+
+    <div id="imageCover"  style="background-image: url(http://blog.knallimall.org/_Resources/Persistent/d99f2607751089944095f754bb40b6a9402b9e09/P8250225-1707x1280.jpg)">
+
+        <div class="row">
+            <div class="small-12 large-12 columns">
+
+                <div class="row">
+                    <div class="small-12 medium-2 large-3 columns">&nbsp;</div>
+
+                    <div class="small-12 medium-8 large-6 columns bgTransparent">
+                        <h4 class="text-center">
+                            {blogEntry.name}
+                        </h4>
+                        <div class="text-center">
+                            <f:format.date date="{blogEntry.datecreated}" format="d.m.Y"/>
+                        </div>
+                        <div class="text-center">
+                            <f:format.raw>{blogEntry.text}</f:format.raw>
+                        </div>
+                    </div>
+                    <div class="small-12 medium-2 large-3 columns">&nbsp;</div>
+                </div>
+
+
+                <f:if condition="{blogEntry.image1}">
+                    <a data-toggle="lightboxImage" data-image="{m:uri.image(image:"{blogEntry.image1}", maximumWidth: 800, maximumHeight: 600)}">
+                        <img class="thumbnail" data-interchange="[{m:uri.image(image:"{blogEntry.image1}", maximumWidth: 100, maximumHeight: 100, allowCropping: true)}, small], [{m:uri.image(image:"{blogEntry.image1}", maximumWidth: 160, maximumHeight: 160, allowCropping: true)}, medium], [{m:uri.image(image:"{blogEntry.image1}", maximumWidth: 250, maximumHeight: 250, allowCropping: true)}, large]" />
+                    </a>
+                </f:if>
+
+                <f:if condition="{blogEntry.image2}">
+                    <a data-toggle="lightboxImage" data-image="{m:uri.image(image:"{blogEntry.image2}", maximumWidth: 800, maximumHeight: 600)}">
+                        <img class="thumbnail" data-interchange="[{m:uri.image(image:"{blogEntry.image2}", maximumWidth: 100, maximumHeight: 100, allowCropping: true)}, small], [{m:uri.image(image:"{blogEntry.image2}", maximumWidth: 160, maximumHeight: 160, allowCropping: true)}, medium], [{m:uri.image(image:"{blogEntry.image2}", maximumWidth: 250, maximumHeight: 250, allowCropping: true)}, large]" />
+                    </a>
+                </f:if>
+
+                <f:if condition="{blogEntry.image3}">
+                    <a data-toggle="lightboxImage" data-image="{m:uri.image(image:"{blogEntry.image3}", maximumWidth: 800, maximumHeight: 600)}">
+                        <img class="thumbnail" data-interchange="[{m:uri.image(image:"{blogEntry.image3}", maximumWidth: 100, maximumHeight: 100, allowCropping: true)}, small], [{m:uri.image(image:"{blogEntry.image3}", maximumWidth: 160, maximumHeight: 160, allowCropping: true)}, medium], [{m:uri.image(image:"{blogEntry.image3}", maximumWidth: 250, maximumHeight: 250, allowCropping: true)}, large]" />
+                    </a>
+                </f:if>
+
+            </div>
+        </div>
+
+    </div>
+
+    <f:render partial="Comments" arguments="{action: 'creae', submitmessage: 'Create comment!', blogEntry:blogEntry}" />
+
+
+</f:section>

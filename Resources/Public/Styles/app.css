@@ -1,0 +1,229 @@
+
+.editBlogPost {
+    text-align: center;
+}
+
+.editBlogPost form {
+    display: inline;
+}
+
+.top-bar {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+
+}
+
+.top-bar .menu-text {
+    padding: 0px;
+    margin-top: -0.5rem;
+    padding-right: 3rem;
+}
+
+.menu li.menu-text a {
+    padding: 0px;
+    margin:0px;
+}
+
+.top-bar .menu-text img {
+    width: 42px;
+
+}
+
+.top-bar, .top-bar ul {
+    background-color: #901616;
+}
+
+.top-bar a {
+    color: #cbd5d5;
+}
+
+.top-bar-right a {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+    color: #cbd5d5;
+    border-color: #cbd5d5 transparent transparent;
+}
+
+.space-100 {
+    display: block;
+    height: 100px;
+    float: none;
+    clear: both;
+
+}
+
+.space-48 {
+    display: block;
+    height: 48px;
+    float: none;
+    clear: both;
+
+}
+
+.space-32 {
+    display: block;
+    height: 32px;
+    float: none;
+    clear: both;
+}
+
+.space-24 {
+    display: block;
+    height: 24px;
+    float: none;
+    clear: both;
+
+}
+
+.top-bar .top-bar-left, .top-bar .top-bar-right {
+    width: auto;
+}
+
+.top-bar-right .menu > li > a.iconWidget {
+    padding: 0px 15px 0 0;
+}
+
+#imageCover {
+    z-index: 5;
+    width: 100%;
+    min-width: 100%;
+    max-width: none;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    margin-top: -80px;
+    overflow: hidden;
+}
+
+.grey.label {
+    background: #cbd5d5;
+    color: #1b1b1b;
+}
+
+#content {
+    padding-top: 80px;
+}
+
+#imageCover > div {
+    padding-top: 100px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    color: #fff;
+    text-shadow: 0 0 2px #000;
+    -moz-text-stroke: 1px black;
+    -webkit-text-stroke: 1px black;
+}
+
+#imageCover > div * {
+    text-align: center;
+}
+
+.thumbnail {
+    margin: 10px;
+}
+
+#lightboxImage {
+    z-index: 100;
+}
+
+.toComments {
+    font-size: 50px;
+    margin-bottom: -38px;
+}
+
+.bounce {
+    position: absolute;
+    bottom: 30px;
+    left: 50% ;
+    width: 60px;
+    height: 60px ;
+    margin-left:-30px;
+    border-radius:50%;
+    animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    -moz-animation: bounce 2s infinite;
+    -o-animation: bounce 2s infinite;
+}
+
+@-webkit-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
+    40% {-webkit-transform: translateY(-10px);}
+    60% {-webkit-transform: translateY(-5px);}
+}
+
+@-moz-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
+    40% {-moz-transform: translateY(-10px);}
+    60% {-moz-transform: translateY(-5px);}
+}
+
+@-o-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
+    40% {-o-transform: translateY(-10px);}
+    60% {-o-transform: translateY(-5px);}
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+#comments {
+    position: absolute;
+    margin-top: 2rem;
+    top: 100%;
+    left: 0px;
+    right: 0px;
+}
+
+#comments hr {
+    margin: .75rem auto
+}
+
+
+#blogList .columns:nth-child(1), #blogList .columns:nth-child(2) {
+    padding-bottom: 1rem;
+}
+
+// Small screens
+@media only screen {
+
+} /* Define mobile styles */
+
+@media only screen and (max-width: 40em) {
+    #blogList img {
+        width: 100%;
+        max-width: auto;
+    }
+
+} /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+// Medium screens
+@media only screen and (min-width: 40.063em) {
+    .editBlogPost {
+        text-align: right !important;
+    }
+} /* min-width 641px, medium screens */
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) { } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+// Large screens
+@media only screen and (min-width: 64.063em) { } /* min-width 1025px, large screens */
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) { } /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+
+// XLarge screens
+@media only screen and (min-width: 90.063em) { } /* min-width 1441px, xlarge screens */
+
+@media only screen and (min-width: 90.063em) and (max-width: 120em) { } /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+
+// XXLarge screens
+@media only screen and (min-width: 120.063em) { } /* min-width 1921px, xxlarge screens */
+
