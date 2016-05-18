@@ -142,6 +142,10 @@
     margin-bottom: -38px;
 }
 
+textarea {
+    height: 300px;
+}
+
 .bounce {
     position: absolute;
     bottom: 30px;

@@ -7,8 +7,14 @@
         <title><f:render section="Title" /></title>
         <f:base />
         <link rel="stylesheet" type="text/css" href="../../../Public/Libraries/foundation-custom/css/foundation.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../../Public/Libraries/zurb-foundation-wysihtml5/src/zurb-foundation-wysihtml5.css" />
+
+        <link rel="stylesheet" type="text/css" href="../../../Public/Libraries/zurb-foundation-wysihtml5/lib/css/foundation-glyphicons.css" />
+        <link rel="stylesheet" type="text/css" href="../../../Public/Libraries/zurb-foundation-wysihtml5/lib/css/wysiwyg-color.css" />
+
         <link rel="stylesheet" type="text/css" href="../../../Public/Styles/app.css" />
-        <script src='../../../Public/Libraries/tinymce/js/tinymce/tinymce.min.js'></script>
+
+
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -62,14 +68,22 @@
                 </div>
             </nav>
         </div>
+
+
         <div id="content">
 
             <f:render section="Content" />
             <f:render partial="LightboxImage"/>
         </div>
-        <script type="text/javascript" src="../../../Public/Libraries/foundation-custom/js/vendor/jquery.js"></script>
+
+
+
+        <script type="text/javascript" src="../../../Public/Libraries/zurb-foundation-wysihtml5/lib/js/wysihtml5-0.3.0.min.js"></script>
+        <script type="text/javascript" src="../../../Public/Libraries/foundation-custom/js/vendor/jquery.min.js"></script>
         <script type="text/javascript" src="../../../Public/Libraries/foundation-custom/js/vendor/what-input.js"></script>
         <script type="text/javascript" src="../../../Public/Libraries/foundation-custom/js/vendor/foundation.min.js"></script>
+        <script type="text/javascript" src="../../../Public/Libraries/zurb-foundation-wysihtml5/src/zurb-foundation-wysihtml5.js"></script>
         <script type="text/javascript" src="../../../Public/JavaScripts/app.js"></script>
+
     </body>
 </html>
