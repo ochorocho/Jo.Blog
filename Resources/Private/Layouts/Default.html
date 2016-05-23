@@ -6,15 +6,10 @@
         <meta charset="utf-8">
         <title><f:render section="Title" /></title>
         <f:base />
-        <link rel="stylesheet" type="text/css" href="../../../Public/Libraries/foundation-custom/css/foundation.min.css" />
-        <link rel="stylesheet" type="text/css" href="../../../Public/Libraries/zurb-foundation-wysihtml5/src/zurb-foundation-wysihtml5.css" />
-
-        <link rel="stylesheet" type="text/css" href="../../../Public/Libraries/zurb-foundation-wysihtml5/lib/css/foundation-glyphicons.css" />
-        <link rel="stylesheet" type="text/css" href="../../../Public/Libraries/zurb-foundation-wysihtml5/lib/css/wysiwyg-color.css" />
-
-        <link rel="stylesheet" type="text/css" href="../../../Public/Styles/app.css" />
-
-
+        <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Libraries/foundation-custom/css/foundation.min.css', package: 'Jo.Blog')}" />
+        <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Libraries/zurb-foundation-wysihtml5/src/zurb-foundation-wysihtml5.css', package: 'Jo.Blog')}" />
+        <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Libraries/zurb-foundation-wysihtml5/lib/css/foundation-glyphicons.css', package: 'Jo.Blog')}" />
+        <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/app.css', package: 'Jo.Blog')}" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -34,7 +29,7 @@
                     <ul class="dropdown menu" data-dropdown-menu>
                         <li class="menu-text">
                             <a href="/">
-                                <img src="../../../Public/Images/logo.png" />
+                                <img src="{f:uri.resource(path: 'Images/logo.png', package: 'Jo.Blog')}" />
                             </a>
                         </li>
                     </ul>
