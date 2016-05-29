@@ -22,7 +22,6 @@
 
     </head>
     <body class="<f:render section="uniqueId" />">
-
         <div class="top-bar">
             <nav class="column row">
                 <div class="top-bar-left">
@@ -31,6 +30,12 @@
                             <a href="/">
                                 <img src="{f:uri.resource(path: 'Images/logo.png', package: 'Jo.Blog')}" />
                             </a>
+                        </li>
+                        <li>
+                            <f:link.action action="index" controller="BlogEntry">Blog</f:link.action>
+                        </li>
+                        <li>
+                            <a href="#">Karte</a>
                         </li>
                     </ul>
                 </div>
