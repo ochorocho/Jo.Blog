@@ -30,16 +30,19 @@
             </f:else>
         </f:if>
 
-
         <div class="space-24">&nbsp;</div>
-        <h4>Create new Comment</h4>
-        <f:form action="create" controller="Comment" objectName="newComment">
+        <h4>Kommentar schreiben ...</h4>
+        <f:form action="create" controller="Comment" objectName="newComment" additionalAttributes="{data-abide: '', novalidate: ''}">
+
             <f:form.hidden property="blogEntry" value="{blogEntry}" />
 
-            <label for="comment-author">Author</label>
-            <f:form.textfield property="author" id="comment-author" />
+            <label for="comment-author">Name</label>
+            <f:form.textfield property="author" additionalAttributes="{required: '', pattern: '[a-zA-Z]+', aria-describedby: 'author-msg'}" id="comment-author" />
+            <span class="form-error" id="author-msg">
+                Yo, richtigen Namen angeben!
+            </span>
 
-            <label for="editor">Content</label>
+            <label for="editor">Text</label>
             <f:form.textarea property="content" id="editor" />
 
             <div class="space-24">&nbsp;</div>

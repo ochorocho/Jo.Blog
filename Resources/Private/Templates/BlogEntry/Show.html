@@ -6,8 +6,11 @@
 
 <f:section name="Content">
 
-    <div id="imageCover"  style="background-image: url(http://blog.knallimall.org/_Resources/Persistent/d99f2607751089944095f754bb40b6a9402b9e09/P8250225-1707x1280.jpg)">
-
+    <div id="imageCover"  style="
+    <f:if condition="{blogEntry.imageCover}">
+        background-image: url('{m:uri.image(image:"{blogEntry.imageCover}", maximumWidth: 800, maximumHeight: 600)}')
+    </f:if>
+    ">
         <span>
             <f:render partial="FlashMessages"/>
         </span>

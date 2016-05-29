@@ -2,17 +2,12 @@ $(document).ready(function () {
 
     $('textarea').wysihtml5({
         stylesheets: [],
-        toolbar: {
-            speech: '<li>' +
-            '<a class="btn" data-wysihtml5-command="insertSpeech" title="Voice input" href="javascript:;" unselectable="on"><i class="icon-volume-up"></i></a>' +
-            '</li>',
-        },
         "font-styles": false,
         "emphasis": true,
         "lists": false,
         "speech": true,
         "html": false,
-        "link": true,
+        "link": false,
         "image": false,
         "color": false
     });
