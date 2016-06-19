@@ -18,7 +18,7 @@ class BlogEntry
 {
 
     /**
-     * @var string
+     * @var \DateTime
      */
     protected $datecreated;
 
@@ -66,6 +66,14 @@ class BlogEntry
      * @var Collection<Comment>
      */
     protected $comments;
+
+    /**
+     * Constructs this comment
+     */
+    public function __construct() {
+        $this->datecreated = new \DateTime();
+    }
+
         
     /**
      * @return string
@@ -114,6 +122,7 @@ class BlogEntry
      */
     public function setImageCover($imageCover)
     {
+        
         $this->imageCover = $imageCover;
     }
 
@@ -162,11 +171,12 @@ class BlogEntry
      */
     public function setImage3($image3)
     {
+                
         $this->image3 = $image3;
     }
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getDatecreated()
     {
@@ -174,7 +184,8 @@ class BlogEntry
     }
 
     /**
-     * @param string $datecreated
+     * @param \DateTime $datecreated
+     * @return void
      */
     public function setDatecreated($datecreated)
     {

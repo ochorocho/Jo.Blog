@@ -44,14 +44,14 @@ class Comment
      * Constructs this comment
      */
     public function __construct() {
-            $this->date = new \DateTime();
+        $this->date = new \DateTime();
     }
 
     /**
      * @return BlogEntry
      */
     public function getBlogEntry() {
-            return $this->blogEntry;
+        return $this->blogEntry;
     }
 
     /**
@@ -59,8 +59,8 @@ class Comment
      * @return void
      */
     public function setBlogEntry(BlogEntry $blogEntry) {
-            $this->blogEntry = $blogEntry;
-            $this->blogEntry->addComment($this);
+        $this->blogEntry = $blogEntry;
+        $this->blogEntry->addComment($this);
     }
 
     /**

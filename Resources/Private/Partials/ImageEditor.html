@@ -1,0 +1,115 @@
+{namespace m=TYPO3\Media\ViewHelpers}
+<div class="row">
+    <div class="small-12 medium-6 columns">
+        <f:if condition="{blogEntry.imageCover}">
+            <f:then>
+                <div class="image-editor" data-minzoom="fill" data-imagestate="{m:uri.image(image:"{blogEntry.imageCover}")}">
+            </f:then>
+            <f:else>
+                <div class="image-editor" data-minzoom="fill">
+            </f:else>
+        </f:if>
+            <label class="button expanded" for="imageCover">Cover image
+                <f:form.upload id="imageCover" class="hide cropit-image-input" property="imageCover.resource" />
+            </label>
+            <div class="cropit-preview"></div>
+            <div class="row">
+                <div class="small-12 medium-6 columns">
+                    <input type="range" class="cropit-image-zoom-input">
+                </div>
+                <div class="small-3 medium-3 columns">
+                    <a class="rotate-ccw button expanded tiny"><div class="flipIt size-32"><i class="fi-loop"></i></div>ccw</a>
+
+                </div>
+                <div class="small-3 medium-3 columns">
+                    <a class="rotate-cw button expanded tiny"><div class=""><i class="step fi-loop size-32"></i></div> cw</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="small-12 medium-6 columns">
+        <f:if condition="{blogEntry.image1}">
+            <f:then>
+                <div class="image-editor" data-minzoom="fit" data-imagestate="{m:uri.image(image:"{blogEntry.image1}")}">
+            </f:then>
+            <f:else>
+                <div class="image-editor" data-minzoom="fit">
+            </f:else>
+        </f:if>
+
+            <label class="button expanded" for="image1">Image 1
+                <f:form.upload id="image1" class="hide cropit-image-input" property="image1.resource" />
+            </label>
+            <div class="cropit-preview"></div>
+            <div class="row">
+                <div class="small-12 medium-6 columns">
+                    <input type="range" class="cropit-image-zoom-input">
+                </div>
+                <div class="small-3 medium-3 columns">
+                    <a class="rotate-ccw button expanded tiny"><div class="flipIt size-32"><i class="fi-loop"></i></div>ccw</a>
+                    <a class="export button expanded tiny"><div class="flipIt size-32"><i class="fi-loop"></i></div>EXPORT</a>
+                </div>
+                <div class="small-3 medium-3 columns">
+                    <a class="rotate-cw button expanded tiny"><div class=""><i class="step fi-loop size-32"></i></div> cw</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="row">
+    <div class="small-12 medium-6 columns">
+
+        <f:if condition="{blogEntry.image2}">
+            <f:then>
+                <div class="image-editor" data-minzoom="fit" data-imagestate="{m:uri.image(image:"{blogEntry.image2}")}">
+            </f:then>
+            <f:else>
+                <div class="image-editor" data-minzoom="fit">
+            </f:else>
+        </f:if>
+            <label class="button expanded" for="image2">Image 2
+                <f:form.upload id="image2" class="hide cropit-image-input" property="image2.resource" />
+            </label>
+            <div class="cropit-preview"></div>
+            <div class="row">
+                <div class="small-12 medium-6 columns">
+                    <input type="range" class="cropit-image-zoom-input">
+                </div>
+                <div class="small-3 medium-3 columns">
+                    <a class="rotate-ccw button expanded tiny"><div class="flipIt size-32"><i class="fi-loop"></i></div>ccw</a>
+                </div>
+                <div class="small-3 medium-3 columns">
+                    <a class="rotate-cw button expanded tiny"><div class=""><i class="step fi-loop size-32"></i></div> cw</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="small-12 medium-6 columns">
+        <f:if condition="{blogEntry.image3}">
+            <f:then>
+                <div class="image-editor" data-minzoom="fit" data-imagestate="{m:uri.image(image:"{blogEntry.image3}")}">
+            </f:then>
+            <f:else>
+                <div class="image-editor" data-minzoom="fit">
+            </f:else>
+        </f:if>
+            <label class="button expanded" for="image3">Image 3
+                <f:form.upload id="image3" class="hide cropit-image-input" property="image3.resource" />
+            </label>
+            <div class="cropit-preview"></div>
+            <div class="row">
+                <div class="small-12 medium-6 columns">
+                    <input type="range" class="cropit-image-zoom-input">
+                </div>
+                <div class="small-3 medium-3 columns">
+                    <a class="rotate-ccw button expanded tiny"><div class="flipIt size-32"><i class="fi-loop"></i></div>ccw</a>
+                </div>
+                <div class="small-3 medium-3 columns">
+                    <a class="rotate-cw button expanded tiny"><div class=""><i class="step fi-loop size-32"></i></div> cw</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

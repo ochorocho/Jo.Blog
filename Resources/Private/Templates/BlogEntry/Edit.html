@@ -7,7 +7,7 @@
 
 <f:section name="Content">
 
-    <f:form action="update" object="{blogEntry}" objectName="blogEntry" enctype="multipart/form-data" additionalAttributes="{data-abide: '',novalidate: ''}">
+    <f:form action="update" id="blogForm" object="{blogEntry}" objectName="blogEntry" enctype="multipart/form-data" additionalAttributes="{data-abide: '',novalidate: ''}">
         <div class="row">
             <div class="medium-12 columns">
                 <label for="name">Blog Post Title
@@ -23,56 +23,9 @@
             </div>
         </div>
         <div class="space-32"></div>
-        <div class="row">
-            <div class="small-6 medium-3 columns">
-                <f:if condition="{blogEntry.imageCover}">
-                    <div class="text-center">
-                        <img class="thumbnail" data-interchange="[{m:uri.image(image:"{blogEntry.imageCover}", maximumWidth: 60, maximumHeight: 60, allowCropping: true)}, small],
-                        [{m:uri.image(image:"{blogEntry.imageCover}", maximumWidth: 80, maximumHeight: 80, allowCropping: true)}, medium],
-                        [{m:uri.image(image:"{blogEntry.imageCover}", maximumWidth: 100, maximumHeight: 100, allowCropping: true)}, large]">
-                    </div>
-                </f:if>
-                <label class="button expanded" for="imageCover">Cover image
-                    <f:form.upload id="imageCover" class="hide" property="imageCover.resource" />
-                </label>
-            </div>
-            <div class="small-6 medium-3 columns">
-                <f:if condition="{blogEntry.image1}">
-                    <div class="text-center">
-                        <img class="thumbnail" data-interchange="[{m:uri.image(image:"{blogEntry.image1}", maximumWidth: 60, maximumHeight: 60, allowCropping: true)}, small],
-                        [{m:uri.image(image:"{blogEntry.image1}", maximumWidth: 80, maximumHeight: 80, allowCropping: true)}, medium],
-                        [{m:uri.image(image:"{blogEntry.image1}", maximumWidth: 100, maximumHeight: 100, allowCropping: true)}, large]">
-                    </div>
-                </f:if>
-                <label class="button expanded" for="image1">Image 1
-                    <f:form.upload id="image1" class="hide" property="image1.resource" />
-                </label>
-            </div>
-            <div class="small-6 medium-3 columns">
-                <f:if condition="{blogEntry.image2}">
-                    <div class="text-center">
-                        <img class="thumbnail" data-interchange="[{m:uri.image(image:"{blogEntry.image2}", maximumWidth: 60, maximumHeight: 60, allowCropping: true)}, small],
-                        [{m:uri.image(image:"{blogEntry.image2}", maximumWidth: 80, maximumHeight: 80, allowCropping: true)}, medium],
-                        [{m:uri.image(image:"{blogEntry.image2}", maximumWidth: 100, maximumHeight: 100, allowCropping: true)}, large]">
-                    </div>
-                </f:if>
-                <label class="button expanded" for="image2">Image 2
-                    <f:form.upload id="image2" class="hide" property="image2.resource" />
-                </label>
-            </div>
-            <div class="small-6 medium-3 columns">
-                <f:if condition="{blogEntry.image3}">
-                    <div class="text-center">
-                        <img class="thumbnail" data-interchange="[{m:uri.image(image:"{blogEntry.image3}", maximumWidth: 60, maximumHeight: 60, allowCropping: true)}, small],
-                        [{m:uri.image(image:"{blogEntry.image3}", maximumWidth: 80, maximumHeight: 80, allowCropping: true)}, medium],
-                        [{m:uri.image(image:"{blogEntry.image3}", maximumWidth: 100, maximumHeight: 100, allowCropping: true)}, large]">
-                    </div>
-                </f:if>
-                <label class="button expanded" for="image3">Image 3
-                    <f:form.upload id="image3" class="hide" property="image3.resource" />
-                </label>
-            </div>
-        </div>
+
+        <f:render partial="ImageEditor" arguments="{blogEntry:blogEntry}" />
+
         <div class="space-32"></div>
         <div class="row">
             <div class="medium-6 columns">

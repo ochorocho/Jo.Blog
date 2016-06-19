@@ -8,6 +8,7 @@
 
     <f:render partial="FlashMessages"/>
 
+
     <div id="blogList">
     <f:if condition="{blogEntries}">
         <f:then>
@@ -27,7 +28,9 @@
                             <div class="medium-8 columns">
                                 <h5>
                                     <f:link.action action="show" arguments="{blogEntry: blogEntry}">{blogEntry.name}</f:link.action>
-                                    <span class="grey label float-right"><f:format.date date="{blogEntry.datecreated}" format="D, d.m.Y"/></span>
+                                    <span class="grey label float-right">
+                                        <f:format.date format="d.m.Y H:i">{blogEntry.datecreated}</f:format.date>
+                                    </span>
                                 </h5>
                                 <f:format.crop maxCharacters="200">
                                     <f:format.stripTags>
